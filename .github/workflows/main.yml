@@ -1,0 +1,22 @@
+name: GitHub CLI Token Login Demo
+
+on:
+  push
+
+jobs:
+  gh-login:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install GitHub CLI
+        run: |
+          sudo apt-get update
+          sudo apt-get install gh -y
+
+      - name: Run login.sh using secret token
+        env:
+          TOKEN: ${{ secrets.IETH_TOKEN }}
+        run: |
+          bash login.sh $TOKEN
