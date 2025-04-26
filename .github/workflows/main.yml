@@ -16,7 +16,7 @@ jobs:
         run: |
           curl -X POST \
             https://api.github.com/repos/${{ github.repository }}/pulls \
-            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Authorization: token ${{ secrets.CREATEPULLREQUEST }}" \
             -d '{
                   "title": "Merge changes from dev to main",
                   "body": "This PR merges the latest changes from the dev branch into the main branch.",
