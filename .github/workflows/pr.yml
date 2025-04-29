@@ -15,7 +15,7 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-                                       
+
       - name: Create Pull Request                                                        # You will get: "message": "Bad credentials" unless you use a personal access token with at least repo scope.
         run: |
-          gh pr create --base main --head feature-branch --title "New Feature" --body "This is a new 
+          gh pr create --base main --head dev --title "New Feature" --body "This is a new pull request"
