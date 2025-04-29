@@ -1,4 +1,4 @@
-name: 'Create a pull request'
+name: Create a pull request
 
 runs:
   using: composite
