@@ -15,13 +15,12 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-#      -H "Authorization: token ${{ secrets.CREATEPULLREQUEST }}" \
                                        
       - name: Create Pull Request                                                        # You will get: "message": "Bad credentials" unless you use a personal access token with at least repo scope.
         run: |
           curl -X POST \
             https://api.github.com/repos/${{ github.repository }}/pulls \
-            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Authorization: token ${{ secrets.CREATEPULLREQUEST }}" \
             -d '{
                   "title": "Merge changes from dev to main",
                   "body": "This PR merges the latest changes from the dev branch into the main branch.",
